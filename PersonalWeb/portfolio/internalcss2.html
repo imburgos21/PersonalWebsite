@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CCC Student Organization Portal</title>
+
+    <style>
+
+        /* ==============================
+           PAGE
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5eee6;
+            font-family: Georgia, "Times New Roman", serif;
+            margin: 0;
+            color: #333;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        .header1 {
+            background-color: #f4aeba;
+            padding: 34px 20px;
+            text-align: center;
+            border-bottom: 5px solid #c54c82;
+        }
+
+        .header1 h1 {
+            margin: 0;
+            color: #b84778;
+            font-size: 34px;
+            letter-spacing: 2px;
+        }
+
+        .header1 p {
+            margin: 10px 0 0;
+            color: #4a3040;
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        .header2 {
+            background-color: #df91a7;
+            padding: 14px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 38px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.2s ease,
+                        transform 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff4f7;
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           MAIN CONTENT
+        ============================== */
+
+        main {
+            min-height: 580px;
+            padding: 30px 20px 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 26px;
+            background-color: #f3d7ca;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .container h2 {
+            margin: 0 0 5px;
+            color: #c45f80;
+            font-size: 25px;
+        }
+
+        .description {
+            margin: 0 0 20px;
+            color: #555;
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           TABLE
+        ============================== */
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 750px;
+            border-collapse: collapse;
+            background-color: #f3d7ca;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        th {
+            background-color: #c86b85;
+            color: white;
+            padding: 15px 12px;
+            border: 2px solid #c86b85;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 2px solid #e6a4b4;
+            font-size: 15px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f5eee6;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f3d7ca;
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f8cbd5;
+        }
+
+
+        /* ==============================
+           ORGANIZATION NAME
+        ============================== */
+
+        .student-name {
+            text-align: left;
+            font-weight: bold;
+            color: #c45f80;
+        }
+
+
+        /* ==============================
+           STATUS
+        ============================== */
+
+        .status {
+            background-color: #df91a7;
+            color: white;
+            font-weight: bold;
+            padding: 10px 14px;
+            white-space: nowrap;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        .footer {
+            width: 100%;
+            background-color: #f3d7ca;
+            border-top: 2px solid #c86b85;
+            padding: 22px 20px;
+            text-align: center;
+            color: #c45f80;
+            font-weight: bold;
+            margin-top: 75px;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .container {
+                width: 95%;
+            }
+
+            .header1 h1 {
+                font-size: 28px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .header1 {
+                padding: 25px 15px;
+            }
+
+            .header1 h1 {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            .header1 p {
+                font-size: 15px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 20px 10px 0;
+            }
+
+            .container {
+                width: 100%;
+                padding: 18px;
+            }
+
+            .container h2 {
+                font-size: 21px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .footer {
+                margin-top: 50px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         HEADER
+    ============================== -->
+
+    <header class="header1">
+
+        <h1>CCC Student Organization Portal</h1>
+
+        <p>City College of Calamba</p>
+
+    </header>
+
+
+    <!-- ==============================
+         NAVIGATION
+    ============================== -->
+
+    <nav class="header2">
+
+        <div class="nav-links">
+
+            <a href="#">Home</a>
+            <a href="#">Students</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    ============================== -->
+
+    <main>
+
+        <section class="container">
+
+            <h2>Student Organization Overview</h2>
+
+            <p class="description">
+                Discover the different student organizations and communities at CCC.
+            </p>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Organization ID</th>
+                            <th>Organization Name</th>
+                            <th>Category</th>
+                            <th>President</th>
+                            <th>Members</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>ORG-001</td>
+                            <td class="student-name">Computer Science Society</td>
+                            <td>Academic</td>
+                            <td>Alex Santos</td>
+                            <td>35</td>
+                            <td class="status">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>ORG-002</td>
+                            <td class="student-name">CCC Student Council</td>
+                            <td>Leadership</td>
+                            <td>Maria Cruz</td>
+                            <td>28</td>
+                            <td class="status">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>ORG-003</td>
+                            <td class="student-name">Arts and Culture Club</td>
+                            <td>Arts &amp; Culture</td>
+                            <td>Jamie Reyes</td>
+                            <td>22</td>
+                            <td class="status">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>ORG-004</td>
+                            <td class="student-name">Environmental Club</td>
+                            <td>Environment</td>
+                            <td>Sam Garcia</td>
+                            <td>30</td>
+                            <td class="status">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>ORG-005</td>
+                            <td class="student-name">Sports Club</td>
+                            <td>Sports</td>
+                            <td>Daniel Flores</td>
+                            <td>40</td>
+                            <td class="status">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td>ORG-006</td>
+                            <td class="student-name">Music and Performing Arts</td>
+                            <td>Performing Arts</td>
+                            <td>Andrea Ramos</td>
+                            <td>25</td>
+                            <td class="status">Active</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer class="footer">
+
+        Student Organizations | A.Y. 2026-2027
+
+    </footer>
+
+
+</body>
+
+</html>

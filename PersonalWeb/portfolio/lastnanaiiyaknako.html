@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Student Registration System</title>
+
+    <style>
+
+        /* for the whole body of the page */
+        body {
+            margin: 0;
+            background-color: #E6F2DD;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+
+        /* header part */
+        .header {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #659287;
+            padding: 25px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 30px;
+        }
+
+        .header p {
+            margin: 7px 0 0;
+            font-size: 13px;
+        }
+		
+		.header2 {
+            background-color: #B1D3B9;
+            padding: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+        }
+
+        .header2 h4 {
+            margin: 0;
+            color: white;
+            font-size: 14px;
+			font: Arial;
+        }
+
+
+        /* main content */
+        .main-content {
+            width: 92%;
+            max-width: 1400px;
+            margin: 30px auto;
+        }
+
+
+        /* top layout */
+        .content {
+            display: grid;
+            grid-template-columns: 27% 71%;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: start;
+        }
+
+
+        /* for the table box part */
+        .table-box {
+            background-color: white;
+            border: 1px solid #B1D3B9;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* table box heading */
+        .table-box h2 {
+            margin: 0 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #B1D3B9;
+            color: #659287;
+            font-size: 19px;
+            font-family: Georgia, serif;
+        }
+
+
+        /* Registration Information */
+        .information {
+            background-color: #B1D3B9;
+            border-left: 5px solid #659287;
+            padding: 16px;
+            box-sizing: border-box;
+            border-radius: 7px;
+        }
+
+        .information h2 {
+            margin: 0 0 6px;
+            color: #659287;
+            font-family: Georgia, serif;
+            font-size: 17px;
+        }
+
+        .information p {
+            margin: 0;
+            font-size: 12px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+
+        /* Student Registration Form */
+        .registration-form {
+            width: 100%;
+            justify-self: stretch;
+        }
+
+
+        /* Form */
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #444;
+        }
+
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 9px;
+            border: 1px solid #B1D3B9;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            background-color: white;
+        }
+
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #659287;
+        }
+
+
+        textarea {
+            resize: vertical;
+        }
+
+
+        /* Buttons part */
+        .buttons {
+            margin-top: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 9px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+
+        input[type="submit"] {
+            background-color: #659287;
+            color: white;
+        }
+
+
+        input[type="reset"] {
+            background-color: #B1D3B9;
+            color: #333;
+            margin-left: 5px;
+        }
+
+
+        input[type="submit"]:hover {
+            background-color: #88BDA4;
+        }
+
+
+        input[type="reset"]:hover {
+            background-color: #88BDA4;
+        }
+
+
+        /* Registered Students */
+        .registered-students {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            table-layout: auto;
+        }
+
+
+        th {
+            background-color: #659287;
+            color: white;
+            padding: 11px;
+            text-align: left;
+            border: 1px solid #659287;
+        }
+
+
+        td {
+            padding: 10px;
+            border: 1px solid #B1D3B9;
+            text-align: left;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: #E6F2DD;
+        }
+
+
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+
+
+        /* Student Name */
+        .student-name {
+            text-align: left;
+            font-weight: bold;
+            color: #659287;
+        }
+
+
+        /* status */
+        .status {
+            display: inline-block;
+            padding: 4px 9px;
+            border-radius: 12px;
+            background-color: #B1D3B9;
+            color: #659287;
+            font-size: 11px;
+            font-weight: bold;
+        }
+		
+		/* for review status */
+		.status-review {
+			background-color: #DCE8C8;
+            color: #7A946B;
+		}
+			
+		/* center the status column */
+			td:last-child {
+				text-align: center;
+
+		}
+
+        /* footer */
+        .footer {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 30px;
+            padding: 16px;
+            background-color: #659287;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+			font-weight: bold;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <h1>Student Registration System</h1>
+
+        <p>Form and Table</p>
+
+    </div>
+	
+	<div class="header2">
+		
+        <h4> City College of Calamba </h4>
+    </div>
+
+
+    <!-- MAIN DASHBOARD -->
+    <div class="main-content">
+
+        <div class="content">
+
+
+            <!-- REGISTRATION INFORMATION -->
+            <div class="information">
+
+                <h2>Registration Information</h2>
+
+                <p>Please provide all necessary information 
+				   and review your details carefully before 
+				   submitting the registration form.</p>
+
+            </div>
+
+
+            <!-- RIGHT: STUDENT REGISTRATION -->
+            <div class="table-box registration-form">
+
+                <h2>Student Registration</h2>
+
+                <form>
+
+
+                    <!-- full name -->
+                    <div class="form-group">
+
+                        <label for="fullname">Full Name:</label>
+						<input type="text" id="fullname" name="fullname">
+					</div>
+
+
+                    <!-- email part -->
+                    <div class="form-group">
+					
+						<label for="email">Email Address:</label>
+						<input type="email" id="email" name="email">
+                    </div>
+
+
+                    <!-- Student Id -->
+                    <div class="form-group">
+
+                        <label for="studentid">Student ID:</label>
+						<input type="text" id="studentid" name="studentid"> 
+                    </div>
+
+                    <!-- Course -->
+                    <div class="form-group">
+
+                        <label for="course">Course:</label>
+						<select id="course" name="course">
+
+                            <option value="">
+                                -- Choose your Course --
+                            </option>
+
+                            <option value="BSCS">
+                                BS Computer Science
+                            </option>
+
+                            <option value="BSIT">
+                                BS Information Technology
+                            </option>
+
+                            <option value="BSEE">
+                                BS Electrical Engineering
+                            </option>
+
+                            <option value="BSCE">
+                                BS Civil Engineering
+                            </option>
+
+                            <option value="BSA">
+                                BS Accountancy
+                            </option>
+
+                            <option value="BSPSY">
+                                BS Psychology
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Gender -->
+                    <div class="form-group">
+
+                        <label>Gender:</label>
+
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male" style="display:inline; font-weight:normal;">
+                            Male
+                        </label>
+
+
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female" style="display:inline; font-weight:normal;">
+                            Female
+                        </label>
+
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+
+                        <label for="message">Message:</label>
+
+                        <textarea id="message" name="message" rows="4" placeholder="Enter your message...">
+						</textarea>
+
+                    </div>
+
+                    <!-- button -->
+                    <div class="buttons">
+
+                        <input type="submit" value="Register">
+
+                        <input type="reset" value="Clear">
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- REGISTERED STUDENTS -->
+            <div class="table-box registered-students">
+
+                <caption>Registered Students</caption>
+
+                <div class="table-container">
+
+                    <table>
+				
+					  <thead>
+
+                        <tr>
+
+                            <th>Student ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Year</th>
+							<th>Date Registered</th>
+                            <th>Status</th>
+
+                        </tr>
+					</thead>
+
+					<tbody>
+                        <tr>
+							<td>10012</td>
+							<td class="student-name">Xandrei Kyle Montero</td>
+							<td>xkmontero@ccc.edu.ph</td>
+							<td>BS Computer Science</td>
+							<td>4th Year</td>
+							<td>August 20, 2026</td>
+							<td><span class="status">Registered</span></td>
+						</tr>
+
+						<tr>
+							<td>10023</td>
+							<td class="student-name">Rana Hidalgo</td>
+							<td>rhidalgo@ccc.edu.ph</td>
+							<td>BS Information Technology</td>
+							<td>2nd Year</td>
+							<td>August 20, 2026</td>
+					        <td><span class="status">Registered</span></td>
+						</tr>
+
+						<tr>
+							<td>10034</td>
+							<td class="student-name">Shaun Javier</td>
+							<td>sjavier@ccc.edu.ph</td>
+							<td>BS Computer Science</td>
+							<td>2nd Year</td>
+							<td>August 20, 2026</td>
+							<td><span class="status status-review">For Review</span></td>
+						</tr>
+
+						<tr>
+							<td>10045</td>
+							<td><span class="student-name">Millicent Velasco</span></td>
+							<td>mvelaso@ccc.edu.ph</td>
+							<td>BS Psychology</td>
+							<td>1st Year</td>
+							<td>August 23, 2026</td>
+							<td><span class="status">Registered</span></td>
+						</tr>
+
+						<tr>
+							<td>10056</td>
+							<td class="student-name">Ysobel Martinez</td>
+							<td>ymartinez@ccc.edu.ph</td>
+							<td>BS Accountacy</td>
+							<td>3rd Year</td>
+							<td>August 20, 2026</td>
+							<td><span class="status status-review">For Review</span></td>
+						</tr>
+
+						<tr>
+							<td>10067</td>
+							<td class="student-name">Riguel Alleje</td>
+							<td>ralleje@ccc.edu.ph</td>
+							<td>BS Electrical Engineering</td>
+							<td>3rd Year</td>
+							<td>August 25, 2026</td>
+							<td><span class="status">Registered</span></td>
+						</tr>
+			
+						<tr>
+							<td>10078</td>
+							<td class="student-name">Juancho Alas Ermino</td>
+							<td>jaermino@ccc.edu.ph</td>
+							<td>BS Civil Engineering</td>
+							<td>4th Year</td>
+							<td>August 22, 2026</td>
+							<td><span class="status">Registered</span></td>
+						</tr>
+						
+					</tbody>
+					
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+
+        Irish M. Burgos | IICS-1
+
+    </div>
+
+
+</body>
+</html>

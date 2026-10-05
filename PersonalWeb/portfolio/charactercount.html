@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User Information Form</title>
+
+    <style>
+
+        body {
+			font-family: Verdana, Courier New;
+			background-color: #F8E8EE;
+			margin: 0;
+			padding: 40px;
+    }
+
+		.container {
+			max-width: 700px;
+			margin: auto;
+			background-color: #FFFFFF;
+			padding: 30px;
+			border: 2px solid #E7B8C5;
+			border-radius: 15px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+    }
+
+		h1 {
+			text-align: center;
+			color: #7A4656;
+			background-color: #F6D6DF;
+			padding: 20px;
+			border: 1px solid #E7B8C5;
+			border-radius: 10px;
+			margin-bottom: 30px;
+    }
+
+		h2 {
+			color: #7A4656;
+			background-color: #FCEFF3;
+			padding: 10px;
+			border-left: 5px solid #C98296;
+			border-radius: 5px;
+			margin-top: 30px;
+    }
+
+		h3 {
+			color: #9B6072;
+			margin-top: 20px;
+    }
+
+		label {
+			display: block;
+			margin-top: 18px;
+			margin-bottom: 7px;
+			font-weight: bold;
+			color: #60414A;
+    }
+
+		input {
+			width: 100%;
+			padding: 12px;
+			border: 2px solid #E1B4C1;
+			border-radius: 7px;
+			box-sizing: border-box;
+			font-size: 15px;
+			color: #60414A;
+			background-color: #FFF9FB;
+    }
+
+		input:focus {
+			border-color: #B86F83;
+			outline: none;
+    }
+
+		p {
+			color: #60414A;
+    }
+
+		#totalCharacters {
+			font-weight: bold;
+			color: #9B6072;
+			background-color: #F6D6DF;
+			padding: 5px 10px;
+			border-radius: 5px;
+    }
+
+		#preview {
+			background-color: #FFF5F8;
+			padding: 18px;
+			border: 1px solid #E1B4C1;
+			border-radius: 8px;
+			min-height: 20px;
+			color: #60414A;
+			font-size: 16px;
+    }
+
+		#letterCount {
+			background-color: #FFF5F8;
+			padding: 15px 30px;
+			border: 1px solid #E1B4C1;
+			border-radius: 8px;
+    }
+
+		#numberCount {
+			background-color: #FFF5F8;
+			padding: 15px 30px;
+			border: 1px solid #E1B4C1;
+			border-radius: 8px;
+    }
+
+		ul {
+			display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+            padding: 0;
+            list-style: none;
+    }
+
+		li {
+			margin: 5px;
+			color: #60414A;
+			padding: 6px;
+            text-align: center;
+            background-color: #F6D6DF;
+            border: 1px solid #E1B4C1;
+            border-radius: 4px;
+            font-size: 13px;
+    }
+
+</style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>User Information Form</h1>
+
+        <label>Enter your name:</label>
+        <input type="text" id="userName" oninput="showInformation()">
+
+
+        <label>Enter your address:</label>
+        <input type="text" id="userAddress" oninput="showInformation()">
+
+        <p>
+            Total Characters:
+            <span id="totalCharacters">0</span>
+        </p>
+
+        <h2>Preview</h2>
+
+        <p id="preview"></p>
+  
+        <h2>Count</h2>
+
+        <h3>Letters</h3>
+
+        <ul id="letterCount"></ul>
+
+
+        <h3>Numbers</h3>
+
+        <ul id="numberCount"></ul>
+
+
+        <script>
+
+            function showInformation() {
+
+                let name = document.getElementById("userName").value;
+
+                let address = document.getElementById("userAddress").value;
+
+                let information = name + address;
+
+
+                document.getElementById("totalCharacters").innerHTML =
+                    information.length;
+
+                document.getElementById("preview").innerHTML =
+                    name + " — " + address;
+
+                let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                let letterOutput = "";
+
+
+                for (let i = 0; i < letters.length; i++) {
+
+                    let letter = letters[i];
+
+                    let count = 0;
+
+
+                    for (let j = 0; j < information.length; j++) {
+
+                        if (information[j].toUpperCase() === letter) {
+
+                            count++;
+
+                        }
+
+                    }
+
+                    letterOutput +=
+                        "<li>" + letter + ": " + count + "</li>";
+
+                }
+
+                document.getElementById("letterCount").innerHTML =
+                    letterOutput;
+
+                let numberOutput = "";
+
+                for (let i = 0; i <= 9; i++) {
+
+                    let numberCount = 0;
+
+                    for (let j = 0; j < information.length; j++) {
+
+                        if (information[j] === i.toString()) {
+
+                            numberCount++;
+
+                        }
+
+                    }
+
+                    numberOutput +=
+                        "<li>" + i + ": " + numberCount + "</li>";
+
+                }
+
+                document.getElementById("numberCount").innerHTML =
+                    numberOutput;
+
+            }
+
+            showInformation();
+         
+        </script>
+
+    </div>
+
+</body>
+
+</html>

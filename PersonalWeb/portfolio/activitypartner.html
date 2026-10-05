@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Class Attendance</title>
+
+    <style>
+
+    body {
+        font-family: Georgia, Courier New;
+        background-color: #fdf0f5;
+        margin: 0;
+        padding: 40px;
+    }
+
+    .container {
+        width: 70%;
+        margin: auto;
+        background-color: white;
+        padding: 30px;
+        border: 2px solid #5b3a70;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #5b3a70;
+    }
+
+    .input {
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: bold;
+        color: #ad1457;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 18px;
+        margin-left: 5px;
+        background-color: #b8d8f0;
+        border: 1px solid #5b3a70;
+        border-radius: 5px;
+    }
+
+    h2 {
+        color: #5b3a70;
+    }
+
+    ol {
+        background-color: #f8e4ed;
+        border: 2px dashed #f48fb1;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        line-height: 1.6;
+        color: black;
+    }
+
+    li {
+        padding: 7px;
+        font-size: 17px;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Class Attendance</h1>
+
+        <div class="input">
+            <label>Enter Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter full name">
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+        <h2>Attendance List:</h2>
+
+        <ol id="attendanceList">
+        </ol>
+
+    </div>
+
+    <script>
+
+        let students = [];
+        let times = [];
+
+        function addStudent() {
+
+            let name = document.getElementById("studentName").value;
+
+            if (name != "") {
+
+                let currentTime = new Date();
+
+                let time = currentTime.toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    hour12: true
+                });
+
+                students.push(name);
+                times.push(time);
+
+                displayStudents();
+
+                document.getElementById("studentName").value = "";
+
+            } else {
+
+                alert("Please enter a student name.");
+
+            }
+        }
+
+        function displayStudents() {
+
+            let list = document.getElementById("attendanceList");
+
+            list.innerHTML = "";
+
+            for (let i = 0; i < students.length; i++) {
+
+                list.innerHTML += "<li>" + students[i] +
+                                  " - Time: " + times[i] + "</li>";
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

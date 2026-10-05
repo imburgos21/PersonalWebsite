@@ -1,0 +1,2601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Personal Website</title>
+
+    <style>
+
+        /* =====================================================
+           COLOR PALETTE
+           ===================================================== */
+
+        :root {
+            --cream: #F4F2EF;
+            --pink: #CD4662;
+            --green: #AEC289;
+            --light-pink: #F4DBDB;
+            --soft-pink: #F1D2DE;
+            --paper: #F8F3EA;
+            --dark: #3F3435;
+            --white: #FFFFFF;
+            --shadow: rgba(60, 40, 40, 0.22);
+        }
+
+
+        /* =====================================================
+           GENERAL
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--cream);
+            color: var(--dark);
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+		nav {
+			width: 100%;
+			height: 72px;
+			background-color: var(--light-pink);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 7%;
+			box-sizing: border-box;
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			border-bottom: 1px solid rgba(63, 52, 53, 0.08);
+			box-shadow: 0 4px 12px rgba(63, 52, 53, 0.06);
+		}
+
+		.logo {
+			color: var(--pink);
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+			letter-spacing: -0.5px;
+			text-decoration: none;
+			margin: 0;
+		}
+
+		nav ul {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav ul li {
+			margin: 0;
+		}
+
+		nav ul li a {
+			display: block;
+			color: var(--pink);
+			text-decoration: none;
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 15px;
+			padding: 10px 16px;
+			border: 1px solid transparent;
+			border-radius: 25px;
+			transition: 0.3s ease;
+		}
+
+		nav ul li a:hover {
+			background-color: var(--pink);
+			color: white;
+			border-color: var(--pink);
+		}	
+
+		nav ul li a.active {
+			color: var(--pink);
+			background-color: rgba(255, 255, 255, 0.45);
+		}
+
+		nav ul li a.active:hover {
+			background-color: var(--pink);
+			color: white;
+			border-color: var(--pink);
+		}
+
+
+		nav ul li a.active {
+			color: var(--pink);
+			background-color: rgba(255, 255, 255, 0.45);
+		}
+
+
+
+      /* =====================================================
+           HOME
+		===================================================== */
+
+		.hero {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			padding: 100px 8%;
+			box-sizing: border-box;
+
+		background:
+			radial-gradient(
+            circle at 20% 20%,
+            #F4DBDB 0%,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            #AEC289 0%,
+            transparent 20%
+        ),
+        var(--cream);
+	}
+
+
+		.hero-content {
+			width: 100%;
+			max-width: 1250px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: 0.8fr 1.2fr;
+			gap: 70px;
+			align-items: center;
+	}
+
+
+		/* LEFT SIDE */
+
+		.hero-text {
+			max-width: 500px;
+	}
+
+		.hero-text .date {
+			color: var(--pink);
+			font-size: 14px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			margin-bottom: 25px;
+	}
+
+		.hero-text h1 {
+			font-size: 70px;
+			line-height: 0.95;
+			margin: 0 0 35px;
+			font-weight: normal;
+	}
+
+		.hero-text h1 span {
+			color: var(--pink);
+			font-style: italic;
+	}
+
+		.hero-text p {
+			font-size: 17px;
+			line-height: 1.9;
+			margin: 0;
+	}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+		.desktop {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+	}
+
+
+		/* MONITOR */
+
+		.monitor {
+			width: 100%;
+			background-color: #292728;
+			padding: 12px;
+			border-radius: 12px;
+			box-shadow:
+				0 15px 30px rgba(0, 0, 0, 0.20);
+			box-sizing: border-box;
+	}
+
+
+		/* SCREEN */
+
+		.screen {
+			width: 100%;
+			min-height: 470px;
+			background:
+				linear-gradient(
+				135deg,
+				#F8F3EA,
+				#F4DBDB
+        );
+			border-radius: 4px;
+			overflow: hidden;
+	}
+
+
+		/* TOP BAR */
+
+		.screen-top {
+			height: 48px;
+			background-color: #F1EEE8;
+			border-bottom: 1px solid #DED9D0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 18px;
+			font-family: Georgia, serif;
+			font-size: 16px;
+			color: #3F3435;
+	}
+
+
+		/* DOTS */
+
+		.screen-dots {
+			display: flex;
+			gap: 7px;
+	}
+
+
+		.screen-dots span {
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background-color: #BDBDBD;
+	}
+
+
+		/* COMPUTER CONTENT */
+
+		.desktop-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 30px;
+			align-items: center;
+			padding: 35px;
+			box-sizing: border-box;
+	}
+
+
+		/* PHOTO */
+
+		.desktop-photo {
+			width: 100%;
+			height: 300px;
+			background-color: white;
+			padding: 8px;
+			box-sizing: border-box;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+	}
+
+		.desktop-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+	}
+
+		/* COMPUTER TEXT */
+
+		.desktop-info h2 {
+			color: var(--pink);
+			font-size: 32px;
+			margin-top: 0;
+			margin-bottom: 20px;
+	}
+
+		.desktop-info p {
+			font-family: Georgia, serif;
+			font-size: 14px;
+			line-height: 1.7;
+			color: var(--dark);
+			margin-bottom: 15px;
+	}
+
+		.desktop-info strong {
+			color: var(--pink);
+	}
+
+		/* MONITOR STAND */
+
+		.monitor-stand {
+			width: 80px;
+			height: 50px;
+			background-color: #292728;
+	}
+
+		/* MONITOR BASE */
+
+		.monitor-base {
+			width: 180px;
+			height: 15px;
+			background-color: #292728;
+			border-radius: 10px;
+			box-shadow:
+			0 8px 12px rgba(0, 0, 0, 0.15);
+	}
+
+
+
+/* =====================================================
+   ABOUT ME
+   ===================================================== */
+
+		
+		.about-section {
+			background:
+				linear-gradient(
+					135deg,
+					#F4DBDB 0%,
+					#F8F3EA 50%,
+					#F4DBDB 100%
+        );
+
+			width: 100%;
+			min-height: 100vh;
+			box-sizing: border-box;
+    
+			padding: 90px 8%;
+		}
+
+		.about-main {
+			width: 100%;
+			max-width: 1050px;
+			margin: 0 auto 80px auto;
+
+			display: grid;
+			grid-template-columns: 300px 1fr;
+			gap: 70px;
+
+			align-items: center;
+			justify-content: center;
+		}
+
+		.about-photo {
+			grid-column: 1;
+			width: 300px;
+			height: 380px;
+			background-color: var(--paper);
+			padding: 12px;
+			box-shadow:
+				0 15px 30px rgba(0,0,0,0.2);
+			transform: rotate(-3deg);
+			box-sizing: border-box;
+		}
+
+		.about-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.about-text {
+			min-width: 0;
+		}
+
+		.about-text h2 {
+			font-size: 50px;
+			font-weight: normal;
+			margin-top: 0;
+		}
+
+		.about-text p {
+			line-height: 1.9;
+			font-size: 17px;
+		}
+
+        /* =====================================================
+			ABOUT CARDS
+		   ===================================================== */
+
+		.about-cards {
+			width: 100%;
+			max-width: 1050px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			align-items: stretch;
+		}
+
+
+/* =====================================================
+   ABOUT CARD
+   ===================================================== */
+
+		.about-card {
+			background-color: var(--paper);
+			padding: 22px 25px;
+			border-top: 1px solid rgba(63, 52, 53, 0.10);
+			border-left: 1px solid rgba(63, 52, 53, 0.10);
+			border-right: 5px solid #CD4662;
+			border-bottom: 5px solid #CD4662;
+			border-radius: 6px;
+			box-shadow:
+				0 4px 10px rgba(60, 40, 40, 0.05),
+				0 12px 25px rgba(60, 40, 40, 0.07);
+			position: relative;
+			overflow: hidden;
+			transition:
+				transform 0.25s ease,
+				box-shadow 0.25s ease;
+		}
+
+
+		/* alternating cards */
+
+		.about-card:nth-child(even) {
+			background-color: var(--light-pink);
+		}
+
+		.about-card:hover {
+			transform: translateY(-4px);
+			box-shadow:
+				0 8px 15px rgba(60, 40, 40, 0.08),
+				0 18px 30px rgba(60, 40, 40, 0.10);
+		}
+
+
+/* =====================================================
+   CARD HEADINGS
+   ===================================================== */
+
+		.about-card h3 {
+			color: var(--pink);
+			font-size: 23px;
+			line-height: 1.15;
+			margin: 0 0 14px;
+			font-weight: bold;
+		}
+
+
+/* =====================================================
+   CARD PARAGRAPHS
+   ===================================================== */
+
+		.about-card p {
+			font-size: 15px;
+			line-height: 1.55;
+			margin: 0 0 12px;
+			color: var(--dark);
+		}
+
+		.about-card p:last-child {
+			margin-bottom: 0;
+		}
+
+
+/* =====================================================
+   CARD LISTS
+   ===================================================== */
+
+		.about-card ul {
+			margin: 0;
+			padding-left: 20px;
+			font-size: 15px;
+			line-height: 1.5;
+		}
+
+		.about-card li {
+			padding-left: 2px;
+			margin-bottom: 2px;
+		}
+
+		.about-card li::marker {
+			color: var(--light pink);
+		}
+
+
+/* =====================================================
+   STUDENT LIFE CARD
+   ===================================================== */
+
+		.student-life-card {
+			background-color: var(--green) !important;
+		}
+
+		.student-life-card h3 {
+			color: var(--paper);
+		}
+
+		.student-life-card p {
+			color: var(--dark);
+		}
+
+		.student-life-card::before {
+			background-color: var(--paper);
+		}
+
+
+/* =====================================================
+   HOBBY TAGS
+   ===================================================== */
+
+		.hobby-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 7px;
+		}
+
+
+/* =====================================================
+   HOBBY TAG
+   ===================================================== */
+
+		.hobby-tag {
+			display: inline-block;
+			background-color: var(--green);
+			color: var(--dark);
+			padding: 6px 11px;
+			border-radius: 18px;
+			font-size: 12px;
+			line-height: 1.2;
+			box-shadow:
+				0 2px 5px rgba(60, 40, 40, 0.08);
+			transition:
+				background-color 0.25s ease,
+				color 0.25s ease,
+				transform 0.25s ease;
+		}
+
+
+		.hobby-tag:hover {
+			background-color: var(--pink);
+			color: white;
+			transform: translateY(-2px);
+		}
+
+   /* =====================================================
+   PORTFOLIO
+   ===================================================== */
+
+		.portfolio-section {
+			min-height: 100vh;
+			background:
+				radial-gradient(
+					circle at 10% 20%,
+					rgba(244, 219, 219, 0.65),
+					transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(174, 194, 137, 0.22),
+            transparent 28%
+        ),
+        var(--cream);
+	
+			padding: 110px 8%;
+			box-sizing: border-box;
+		}
+
+
+/* =====================================================
+   PORTFOLIO TITLE
+   ===================================================== */
+
+		.portfolio-section .section-title {
+			text-align: center;
+			margin-bottom: 55px;
+		}
+
+		.portfolio-section .section-title span {
+			display: block;
+			color: var(--pink);
+			font-size: 13px;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+
+		.portfolio-section .section-title h2 {
+			font-size: 48px;
+			font-weight: normal;
+			margin: 0;
+			color: var(--dark);
+		}
+
+
+/* =====================================================
+   PROJECT GRID
+   ===================================================== */
+
+		.portfolio-grid {
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 28px;
+		}
+
+
+/* =====================================================
+   PROJECT CARD
+   ===================================================== */
+
+		.project {
+			position: relative;
+			min-height: 200px;
+			padding: 18px 22px 50px;
+			background-color: var(--paper);
+			border: 1px solid rgba(63, 52, 53, 0.12);
+			box-shadow:
+				0 5px 12px rgba(60, 40, 40, 0.05),
+				0 18px 35px rgba(60, 40, 40, 0.08);
+			box-sizing: border-box;
+			overflow: hidden;
+			transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease,
+			background-color 0.3s ease;
+		}
+
+
+		.project::before {
+			content: "";
+			position: absolute;
+			width: 65px;
+			height: 65px;
+			top: -32px;
+			right: -32px;
+			background-color: var(--light-pink);
+			border-radius: 50%;
+		}
+
+/* =====================================================
+   PROJECT NUMBER
+   ===================================================== */
+
+		.project-number {
+			color: var(--pink);
+			font-size: 13px;
+			letter-spacing: 4px;
+			margin-bottom: 18px;
+			text-transform: uppercase;
+		}
+
+
+/* =====================================================
+   PROJECT TITLE
+   ===================================================== */
+
+		.project h3 {
+			color: var(--dark);
+			font-size: 22px;
+			line-height: 1.15;
+			margin: 0 0 15px;
+			font-weight: bold;
+		}
+
+
+/* =====================================================
+   PROJECT DESCRIPTION
+   ===================================================== */
+
+		.project p {
+			color: var(--dark);
+			font-size: 15px;
+			line-height: 1.7;
+			margin: 0;
+			max-width: 650px;
+		}
+
+
+/* =====================================================
+   PROJECT BUTTON
+   ===================================================== */
+
+		.project-tag {
+			position: absolute;
+			left: 30px;
+			bottom: 24px;
+			display: inline-block;
+			background-color: var(--green);
+			color: var(--dark);
+			padding: 9px 17px;
+			border-radius: 20px;
+			font-family: Georgia,"Times New Roman", serif;
+			font-size: 13px;
+			text-decoration: none;
+			border: 1px solid rgba(63, 52, 53, 0.08);
+			transition:
+				background-color 0.3s ease,
+				color 0.3s ease,
+			transform 0.3s ease;
+		}
+
+
+		.project-tag:hover {
+			background-color: var(--pink);
+			color: white;
+			transform: translateY(-2px);
+		}
+		
+        /* =====================================================
+           CAMERA
+           ===================================================== */
+
+        .camera-section {
+            background-color: var(--light-pink);
+        }
+
+        .camera-container {
+            max-width: 950px;
+            margin: auto;
+            display: grid;
+            grid-template-columns:
+                1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .camera {
+            position: relative;
+            background-color: #393536;
+            width: 100%;
+            height: 330px;
+            border-radius: 35px;
+            box-shadow:
+                0 25px 35px rgba(0,0,0,0.25),
+                inset 0 3px 5px rgba(255,255,255,0.1);
+        }
+
+        .camera-top {
+            position: absolute;
+            top: -25px;
+            left: 80px;
+            width: 170px;
+            height: 35px;
+            background-color: #333;
+            border-radius:
+                10px
+                10px
+                0
+                0;
+        }
+
+        .camera-lens {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle,
+                    #9cabb0 0%,
+                    #202528 30%,
+                    #101112 60%,
+                    #555 61%,
+                    #222 70%
+                );
+
+            top: 90px;
+            left: 50%;
+            transform:
+                translateX(-50%);
+            border:
+                15px
+                solid
+                #222;
+
+            box-shadow:
+                inset 0 0 15px black,
+                0 8px 15px rgba(0,0,0,0.5);
+        }
+
+        .camera-flash {
+            position: absolute;
+            width: 55px;
+            height: 25px;
+            top: 40px;
+            right: 70px;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+
+        .camera-button {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: var(--pink);
+        }
+
+        .camera-text h3 {
+            font-size: 40px;
+            margin-top: 0;
+        }
+
+        .camera-text p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+/* =====================================================
+   GALLERY
+   ===================================================== */
+
+
+		section {
+			padding: 110px 8%;
+			background-color: #D2DCB6;
+			box-sizing: border-box;
+		}
+
+		.section-title {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		.section-title span {
+			display: block;
+			font-size: 13px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			color: var(--pink);
+			margin-bottom: 7px;
+		}
+
+		.section-title h2 {
+			font-size: 45px;
+			font-weight: normal;
+			margin: 0;
+		}
+
+		.section-title p {
+			max-width: 600px;
+			margin: 12px auto 0;
+			font-size: 15px;
+			line-height: 1.6;
+		}
+
+
+		/* GALLERY GRID */
+
+		.gallery-grid {
+			max-width: 1050px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 18px;
+		}
+
+
+		/* GALLERY CARD */
+
+		.gallery-card {
+			background-color: var(--light-pink);
+			padding: 10px 10px 15px;
+			box-shadow:
+				0 10px 25px rgba(60, 40, 40, 0.12);
+			position: relative;
+		}
+
+
+		/* SCRAPBOOK EFFECT */
+
+		.gallery-card:nth-child(1) {
+			transform: rotate(-3deg);
+		}
+
+		.gallery-card:nth-child(2) {
+			transform: rotate(2deg);
+		}
+
+		.gallery-card:nth-child(3) {
+			transform: rotate(-2deg);
+		}
+
+		.gallery-card:nth-child(4) {
+			transform: rotate(3deg);
+		}
+
+		.gallery-card:nth-child(5) {
+			transform: rotate(-2deg);
+		}
+
+		.gallery-card:nth-child(6) {
+			transform: rotate(2deg);
+		}
+
+
+		/* HOVER */
+
+		.gallery-card:hover {
+			transform: rotate(0deg) scale(1.04);
+			z-index: 2;
+		}	
+
+
+			/* IMAGE */
+
+		.gallery-image {
+			width: 100%;
+			height: 175px;
+			overflow: hidden;
+			background-color: #E6E0DA;
+		}		
+
+
+		.gallery-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+
+			/* CAPTION */
+
+		.gallery-caption {
+			text-align: center;
+			padding: 8px 5px 3px;
+			font-size: 14px;
+			font-style: italic;
+			color: var(--dark);
+			font-family: Georgia, "Times New Roman", serif;
+			margin: 8px 5px 0;
+		}
+		
+/* =====================================================
+   CONTACT
+   ===================================================== */
+
+		.contact-section {
+			min-height: 100vh;
+
+		background:
+			radial-gradient(
+				circle at 15% 20%,
+				rgba(244, 219, 219, 0.75),
+				transparent 30%
+        ),
+			radial-gradient(
+				circle at 85% 80%,
+				rgba(174, 194, 137, 0.25),
+				transparent 30%
+        ),
+			var(--paper);
+
+		padding: 70px 8%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+
+/* =====================================================
+   CONTACT TITLE
+   ===================================================== */
+
+		.contact-section .section-title {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		.contact-section .section-title span {
+			display: block;
+			font-size: 13px;
+			letter-spacing: 4px;
+			text-transform: uppercase;
+			color: var(--pink);
+			margin-bottom: 8px;
+		}
+
+		.contact-section .section-title h2 {
+			font-size: 48px;
+			font-weight: normal;
+			color: var(--dark);
+			margin: 0;
+		}	
+
+		.contact-section .section-title p {
+			max-width: 600px;
+			margin: 12px auto 0;
+			font-size: 16px;
+			line-height: 1.6;
+			color: var(--dark);
+		}
+
+
+/* =====================================================
+   CONTACT CONTAINER
+   ===================================================== */
+
+		.contact-container {
+			width: 100%;
+			max-width: 760px;
+			margin: 0 auto;
+			padding: 35px 40px;
+			box-sizing: border-box;
+			background-color: var(--paper);
+			border: 1px solid rgba(63, 52, 53, 0.10);
+			box-shadow:
+				0 10px 25px rgba(63, 52, 53, 0.08),
+				0 20px 40px rgba(63, 52, 53, 0.05);
+			position: relative;
+		}
+
+
+
+/* =====================================================
+   FORM INPUTS
+   ===================================================== */
+
+			.contact-container input,
+			.contact-container textarea {
+				width: 100%;
+				padding: 13px 15px;
+				margin-bottom: 15px;
+				box-sizing: border-box;
+				border: 1px solid #d8caca;
+				background-color: #fffaf8;
+				color: var(--dark);
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: 14px;
+				outline: none;
+		}
+
+
+/* =====================================================
+   TEXTAREA
+   ===================================================== */
+
+			.contact-container textarea {
+				height: 120px;
+				resize: vertical;
+		}
+
+
+/* =====================================================
+   PLACEHOLDER
+   ===================================================== */
+
+			.contact-container input::placeholder,
+			.contact-container textarea::placeholder {
+				color: #76666A;
+				opacity: 0.8;
+		}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+   ===================================================== */
+
+			.submit-button {
+				background-color: var(--pink);
+				color: white;
+				border: none;
+				padding: 12px 28px;
+				cursor: pointer;
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: 14px;
+		}
+
+
+/* =====================================================
+   CONTACT NOTE
+   ===================================================== */
+
+			.contact-note {
+				text-align: center;
+				margin: 15px 0 0;
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: 13px;
+				font-style: italic;
+				color: var(--dark);
+				opacity: 0.7;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+			footer {
+				width: 100%;
+				min-height: 20vh;
+				background-color: var(--dark);
+				color: var(--paper);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 60px 8%;
+				text-align: center;
+				border-top: 6px solid var(--pink);
+				box-sizing: border-box;
+		}
+
+			.footer-content {
+				width: 100%;
+				max-width: 1100px;
+				margin: 0 auto;
+		}
+
+			.footer-title {
+				color: var(--light-pink);
+				font-size: 36px;
+				font-weight: bold;
+				font-style: italic;
+				margin: 0 0 15px;
+		}
+
+			.footer-text {
+				max-width: 650px;
+				margin: 0 auto 30px;
+				font-size: 16px;
+				line-height: 1.8
+				color: #F1D2DE;
+		}
+
+			.footer-links {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 30px;
+				flex-wrap: wrap;
+				margin-bottom: 35px;
+		}
+
+			.footer-links a {
+				color: var(--paper);
+				text-decoration: none;
+				font-size: 15px;
+				transition: 0.3s;
+		}
+
+			.footer-links a:hover {
+				color: var(--pink);
+		}
+
+			.footer-line {
+				width: 100%;
+				height: 1px;
+				background-color: rgba(248, 243, 234, 0.25);
+				margin: 0 auto 25px;
+		}
+
+			.footer-bottom {
+				margin: 0;
+				font-size: 13px;
+				color: #D8CACA;
+		}
+
+			.footer-bottom span {
+				color: var(--pink);
+		}
+		
+		/* =====================================================
+			SOCIAL MEDIA
+		   ===================================================== */
+
+			.social-links {
+				text-align: center;
+				margin-top: 45px;
+		}
+
+			.social-links h3 {
+				font-size: 24px;
+				color: var(--dark);
+				margin-bottom: 10px;
+		}
+
+			.social-links p {
+				font-size: 15px;
+				margin-bottom: 20px;
+				color: var(--dark);
+		}
+
+			.social-icons {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+				flex-wrap: wrap;
+		}
+
+			.social-link {
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: var(--light-pink);
+				color: var(--pink);
+				text-decoration: none;
+				border: 1px solid var(--pink);
+				border-radius: 25px;
+				font-size: 14px;
+				transition: 0.3s;
+		}
+
+			.social-link:hover {
+				background-color: var(--pink);
+				color: white;
+		}
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            .hero-content,
+            .camera-container,
+            .about-main {
+                grid-template-columns: 1fr;
+            }
+
+            .people-grid,
+            .about-cards,
+            .favorites-grid,
+            .memory-grid,
+            .portfolio-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .silly-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .desktop-content {
+                grid-template-columns: 1fr;
+            }
+
+            .desktop-info {
+                display: none;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding:
+                    70px
+                    5%;
+            }
+
+            .section-title h2 {
+                font-size: 38px;
+            }
+
+            .people-grid,
+            .about-cards,
+            .favorites-grid,
+            .memory-grid,
+            .portfolio-grid,
+            .journal-grid,
+            .dream-list {
+                grid-template-columns: 1fr;
+            }
+
+            .silly-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .notebook {
+                padding-left: 65px;
+            }
+
+            .camera {
+                height: 250px;
+            }
+
+            .camera-lens {
+                width: 110px;
+                height: 110px;
+                top: 70px;
+            }
+
+            .about-photo {
+                width: 250px;
+                margin: auto;
+            }
+
+            .dream-container {
+                padding: 30px;
+            }
+
+        }
+		
+	
+
+:root {
+    --pink-deep: #A82F4B;  
+    --pink-soft: #E8A9B8;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+nav {
+    background-color: rgba(244, 219, 219, 0.82);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.logo,
+nav ul li a {
+    color: var(--pink-deep);
+}
+
+nav ul li a:hover {
+    background-color: var(--pink-deep);
+    border-color: var(--pink-deep);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* the current page is clearly filled */
+nav ul li a.active {
+    background-color: var(--pink-deep);
+    border-color: var(--pink-deep);
+    color: #fff;
+}
+
+nav ul li a:focus-visible,
+.project-tag:focus-visible,
+.social-link:focus-visible,
+.submit-button:focus-visible {
+    outline: 3px solid var(--pink-deep);
+    outline-offset: 3px;
+}
+
+
+/* ---------- SECTION TITLES ---------- */
+
+.section-title span,
+.portfolio-section .section-title span,
+.contact-section .section-title span {
+    color: var(--pink-deep);
+    margin-bottom: 14px;
+}
+
+.about-section .section-title {
+    margin-bottom: 70px;
+}
+
+/* quieter section title so the name becomes the focal point */
+.about-section .section-title h2 {
+    font-size: 32px;
+    letter-spacing: 0.5px;
+}
+
+
+/* ---------- ABOUT: TEXT ---------- */
+
+.about-main {
+    gap: 90px;
+}
+
+.about-text h2 {
+    font-size: 64px;
+    line-height: 1.05;
+    color: var(--pink-deep);
+    font-style: italic;
+    margin-bottom: 28px;
+}
+
+.about-text p {
+    max-width: 58ch;
+    line-height: 1.75;
+    margin: 0 0 20px;
+}
+
+
+/* ---------- ABOUT: PHOTO ---------- */
+
+.about-photo {
+    position: relative;
+    background-color: #fff;
+    padding: 14px 14px 46px;          /* thicker bottom edge = real polaroid */
+    box-shadow:
+        0 2px 4px rgba(60, 40, 40, 0.10),
+        0 18px 38px rgba(60, 40, 40, 0.22);
+    transition: transform 0.4s ease;
+}
+
+/* offset pink frame behind the photo */
+.about-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--pink-soft);
+    transform: translate(16px, 16px) rotate(3deg);
+    z-index: -1;
+}
+
+/* washi tape */
+.about-photo::after {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    width: 110px;
+    height: 32px;
+    transform: translateX(-50%) rotate(-4deg);
+    background: rgba(174, 194, 137, 0.75);
+    box-shadow: 0 1px 3px rgba(60, 40, 40, 0.15);
+}
+
+.about-photo:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+
+/* ---------- ABOUT CARDS ---------- */
+
+.about-cards {
+    gap: 26px;
+}
+
+.about-card {
+    padding: 26px 28px;
+}
+
+.about-card h3 {
+    color: var(--pink-deep);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px dashed rgba(168, 47, 75, 0.35);
+}
+
+.student-life-card h3 {
+    color: var(--dark);
+    border-bottom-color: rgba(63, 52, 53, 0.35);
+}
+
+.hobby-tag {
+    font-size: 13px;
+    padding: 7px 13px;
+}
+
+
+/* ---------- PORTFOLIO ---------- */
+
+.project {
+    padding: 26px 28px 70px;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 8px 16px rgba(60, 40, 40, 0.08),
+        0 24px 44px rgba(60, 40, 40, 0.12);
+}
+
+.project-number {
+    color: var(--pink-deep);
+    margin-bottom: 14px;
+}
+
+.project-tag {
+    left: 28px;
+    bottom: 26px;
+}
+
+
+/* ---------- GALLERY ---------- */
+
+.gallery-card {
+    background-color: #fff;
+    padding: 12px 12px 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    box-shadow: 0 18px 35px rgba(60, 40, 40, 0.2);
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border-color: var(--pink-deep);
+    box-shadow: 0 0 0 3px rgba(205, 70, 98, 0.18);
+}
+
+.submit-button {
+    border-radius: 25px;
+    padding: 13px 32px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--pink-deep);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    flex-direction: column;
+    gap: 6px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer br {
+    display: none;
+}
+
+
+/* ---------- ONE ENTRANCE MOMENT ---------- */
+
+@keyframes settle {
+    from { opacity: 0; transform: translateY(24px) rotate(-6deg); }
+    to   { opacity: 1; transform: translateY(0) rotate(-3deg); }
+}
+
+.about-photo {
+    animation: settle 0.8s ease both;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .about-main {
+        gap: 50px;
+        justify-items: center;
+    }
+
+    .about-text h2 {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        height: auto;
+        padding: 12px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-photo {
+        width: 250px;
+        height: 340px;
+        margin: 0 auto;
+    }
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        Get to Know Me
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home" class="active">Home</a>
+        </li>
+		
+        <li>
+            <a href="#about" class="active">About Me</a>
+        </li>
+		
+		
+        <li>
+            <a href="#portfolio" class="active">Portfolio</a>
+        </li>
+		
+        <li>
+            <a href="#gallery" class="active">Gallery</a>
+        </li>
+
+        <li>
+            <a href="#contact" class="active">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HOME
+     ===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <!-- LEFT: HELLO I'M IRISH -->
+
+        <div class="hero-text">
+
+            <div class="date" id="today"></div>
+
+            <h1>
+                Hello,<br>
+                I'm <span>Irish.</span>
+            </h1>
+
+            <p>
+				This website is a little space where you can get to
+				know me better. Here, you can learn more about my
+				personality, hobbies, interests, memories, dreams,
+				and the little things that make me who I am.
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT: DESKTOP -->
+
+        <div class="desktop">
+
+            <div class="monitor">
+
+                <div class="screen">
+
+                    <div class="screen-top">
+
+                        <span>My little space</span>
+
+                        <div class="screen-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="desktop-content">
+
+                        <div class="desktop-photo">
+
+                            <img
+                                src="C:\Users\irishburgos\OneDrive\Documents\html projects\profilePicture.jpeg"
+                                alt="My Picture">
+
+                        </div>
+
+
+                        <div class="desktop-info">
+
+                            <h2>
+                                About Me
+                            </h2>
+
+                            <p>
+                                Hi! My name is
+                                <strong>Irish Burgos</strong>.
+                            </p>
+
+                            <p>
+                                I am a college student who explores
+                                technology, programming, creative
+                                projects, music, books, games,
+                                and discovering new hobbies.
+                            </p>
+
+                            <p>
+                                I am currently learning more about
+                                web development and programming
+                                while trying to understand what I
+                                want to build in the future.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="monitor-stand"></div>
+
+            <div class="monitor-base"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ABOUT ME
+     ===================================================== -->
+
+<section
+    class="about-section"
+    id="about">
+
+
+    <div class="section-title">
+
+        <span>
+            A Little More About Me
+        </span>
+
+        <h2>
+            This Is Me
+        </h2>
+
+    </div>
+
+
+    <div class="about-main">
+
+
+        <div class="about-photo">
+
+            <img src="C:\Users\irishburgos\OneDrive\Documents\html projects\picture2.jpeg"
+                alt="Picture 2">
+				
+
+        </div>
+
+
+        <div class="about-text">
+
+            <h2>
+                Hi, I'm Irish.
+            </h2>
+
+		<p>
+			I am a 20 year old girl who is still discovering
+			herself and figuring out the person she wants to
+			become. I am currently studying Computer Science,
+			where I get to learn about technology, programming,
+			and how simple ideas can turn into something meaningful.
+		</p>
+
+		<p>
+			I am someone who enjoys the little things in life.
+			I love listening to music, reading, singing, playing
+			games, taking pictures, crocheting, playing instruments,
+			and spending time with the people I love. I enjoy
+			trying new things, making memories, and appreciating
+			the moments that make me happy.
+		</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT CARDS -->
+
+    <div class="about-cards">
+
+
+        <!-- HOBBIES -->
+
+        <div class="about-card">
+
+            <h3>
+                 My Hobbies
+            </h3>
+
+            <div class="hobby-tags">
+
+                <span class="hobby-tag">
+                    Crochet
+                </span>
+
+                <span class="hobby-tag">
+                    Singing
+                </span>
+
+                <span class="hobby-tag">
+                    Guitar
+                </span>
+
+                <span class="hobby-tag">
+                    Reading
+                </span>
+
+                <span class="hobby-tag">
+                    Roblox
+                </span>
+
+                <span class="hobby-tag">
+                    Photography
+                </span>
+
+                <span class="hobby-tag">
+                    Watching Movies
+                </span>
+
+                <span class="hobby-tag">
+                    Music
+                </span>
+
+                <span class="hobby-tag">
+                    Playing piano keyboards
+                </span>
+
+                <span class="hobby-tag">
+                    Exploring
+                </span>
+
+                <span class="hobby-tag">
+                    Trying New Things
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- THINGS I LOVE -->
+
+        <div class="about-card">
+
+            <h3>
+                 Things I Love
+            </h3>
+
+            <ul>
+
+                <li>
+                    Spending time with people I love
+                </li>
+
+                <li>
+                    Listening to music
+                </li>
+
+                <li>
+                    Reading a good book
+                </li>
+
+                <li>
+                    Creating things
+                </li>
+
+                <li>
+                    Taking pictures
+                </li>
+
+                <li>
+                    Laughing over random things
+                </li>
+				
+				<li>
+				   Going on a solo date
+				 </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <div class="about-card">
+
+            <h3>
+                 Technical Skills
+            </h3>
+
+            <ul>
+
+                <li>
+                    HTML
+                </li>
+
+                <li>
+                    CSS
+                </li>
+
+                <li>
+                    JavaScript
+                </li>
+
+                <li>
+                    Java
+                </li>
+
+                <li>
+                    C / C++
+                </li>
+
+                <li>
+                    MySQL
+                </li>
+
+                <li>
+                    Canva
+                </li>
+
+                <li>
+                    Networking
+                </li>
+
+                <li>
+                    Video Editing
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- PERSONALITY -->
+
+        <div class="about-card">
+
+            <h3>
+                 My Personality
+            </h3>
+
+            <p>
+                I can be quiet and shy around people I don't
+                know very well, but I become much more
+                comfortable and playful around people close
+                to me.
+            </p>
+
+            <p>
+                I tend to think a lot, but I am also someone
+                who wants to keep learning and improving.
+            </p>
+
+        </div>
+
+
+        <!-- STUDENT LIFE -->
+
+        <div class="about-card student-life-card">
+
+            <h3>
+                 Student Life
+            </h3>
+
+            <p>
+                Being a college student means balancing
+                classes, projects, deadlines, friendships,
+                hobbies, and trying to figure out the future.
+            </p>
+
+            <p>
+                Some days are productive. Some are chaotic.
+                Both become part of the story.
+            </p>
+
+        </div>
+
+
+        <!-- RANDOM FACTS -->
+
+        <div class="about-card">
+
+            <h3>
+                 Things I want to Experience
+            </h3>
+
+            <ul>
+
+				<li>
+                   Have a peaceful and happy life
+                </li>
+				
+				<li>
+					To find my purpose
+				</li>
+				
+                <li>
+                    Become successful in my career
+                </li>
+
+                <li>
+                    Travel to different places
+                </li>
+
+                <li>
+                   To make my parents proud
+                </li>
+
+                <li>
+                    Make more memories with loved ones
+                </li>
+
+                <li>
+                    Take more photographs
+                </li>
+
+                <li>
+                     Improve my guitar skills
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PORTFOLIO
+     ===================================================== -->
+
+<section
+    class="portfolio-section"
+    id="portfolio">
+
+    <div class="section-title">
+
+        <span>
+            Things I've Created In Web Design
+        </span>
+
+        <h2>
+            My Portfolio
+        </h2>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                Student Information System Project
+            </h3>
+
+            <p>
+                A programming project created using C that
+                demonstrates basic programming concepts such
+                as user input, processing, and displaying
+                information.
+            </p>
+
+            <a href="C:\Users\irishburgos\OneDrive\Documents\html projects\lastnanaiiyaknako.html" class="project-tag">
+                Student Information System
+            </a>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                Character Count Project
+            </h3>
+
+            <p>
+                A simple web project that uses HTML, CSS, and
+                JavaScript to count and display the number of
+                characters entered by the user.
+            </p>
+
+            <a href="C:\Users\irishburgos\OneDrive\Documents\html projects\charactercount.html" class="project-tag">
+                Character Count
+            </a>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                Attendance Checker Project
+            </h3>
+
+            <p>
+                An attendance checking project designed to
+                record and manage attendance information
+                through a simple user interface.
+            </p>
+
+            <a href="C:\Users\irishburgos\OneDrive\Documents\html projects\activitypartner.html" class="project-tag">
+                Attendance Checker
+            </a>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>
+                Student Records Project
+            </h3>
+
+            <p>
+                A student records portal created with HTML
+                and internal CSS to organize and present
+                student information in a simple layout.
+            </p>
+
+            <a href="C:\Users\irishburgos\OneDrive\Documents\html projects\internalcss2.html" class="project-tag">
+                Student Records Portal
+            </a>
+
+        </div>
+
+	</section>
+
+<!-- =====================================================
+     CAMERA
+     ===================================================== -->
+
+<section class="camera-section" id="gallery">
+
+    <div class="section-title">
+
+        <span>
+            Captured Memories
+        </span>
+
+        <h2>
+            Through My Camera
+        </h2>
+
+    </div>
+
+
+    <div class="camera-container">
+
+        <div class="camera">
+
+            <div class="camera-top"></div>
+
+            <div class="camera-flash"></div>
+
+            <div class="camera-button"></div>
+
+            <div class="camera-lens"></div>
+
+        </div>
+
+
+        <div class="camera-text">
+
+            <h3>
+                Little Moments
+            </h3>
+
+            <p>
+                A camera captures moments that we may forget
+                over time. Some photographs are beautiful,
+                while others are simply funny memories that
+                make us smile years later.
+            </p>
+
+            <p>
+                This website is my own little collection of
+                those moments.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="section-title">
+
+        <span>
+           Pieces Inside
+        </span>
+
+        <h2>
+            My Gallery
+        </h2>
+
+        <p>
+            A collection of my favorite pictures,
+            little moments, and memories.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <!-- PHOTO 1 -->
+        <div class="gallery-card">
+
+            <div class="gallery-image">
+                <img src="images/beachpic.jpeg" alt="Beach photo">
+            </div>
+
+            <div class="gallery-caption">
+                A little moment of me.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+        <div class="gallery-card">
+
+            <div class="gallery-image">
+                <img src="images/babypicwithtatay.jpeg" alt="Baby pic with my Tatay">
+            </div>
+
+            <div class="gallery-caption">
+                One of my favorite picture.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+        <div class="gallery-card">
+
+            <div class="gallery-image">
+                <img src="images/duyanpic.jpeg" alt="My photo">
+            </div>
+
+            <div class="gallery-caption">
+                Just being myself.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+        <div class="gallery-card">
+
+            <div class="gallery-image">
+                <img src="images/christmaspic.jpeg" alt="Christmas Photo">
+            </div>
+
+            <div class="gallery-caption">
+                A memory worth keeping.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+        <div class="gallery-card">
+
+            <div class="gallery-image">
+                <img src="images/18thbday.jpeg" alt="Birthday Photo">
+            </div>
+
+            <div class="gallery-caption">
+                Another little piece of me.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+        <div class="gallery-card">
+
+            <div class="gallery-image">
+                <img src="images/tagaytay.jpeg" alt="Tagaytay with Fam">
+            </div>
+
+            <div class="gallery-caption">
+                A moment I want to relive.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
+
+<section class="contact-section" id="contact">
+
+    <div class="section-title">
+
+        <span>
+            Say Hello
+        </span>
+
+        <h2>
+            Get in Touch
+        </h2>
+
+        <p>
+            Have something to say, ask, or simply want to leave
+            a little message? I'd love to hear from you.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <form id="contactForm" onsubmit="return validateForm()">
+
+            <!-- FULL NAME -->
+            <input
+                type="text"
+                id="FullName"
+                placeholder="Your name"
+                oninput="checkName()"
+                required
+            >
+
+            <!-- EMAIL -->
+            <input
+                type="email"
+                id="Email"
+                placeholder="Your email address"
+                required
+            >
+
+            <!-- TOPIC -->
+            <input
+                type="text"
+                id="Project"
+                placeholder="What would you like to talk about?"
+                required
+            >
+
+            <!-- MESSAGE -->
+            <textarea
+                id="visitorMessage"
+                placeholder="Write your message here..."
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <p class="contact-note">
+        A little message can go a long way ♡
+    </p>
+
+    <div class="social-links">
+
+        <h3>
+            Find Me Online
+        </h3>
+
+        <p>
+            You can also connect with me through my social media.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="https://www.instagram.com/tokyo.v3ii"
+               target="_blank"
+               class="social-link">
+                Instagram
+            </a>
+
+            <a href="https://www.facebook.com/rishburgoss/"
+               target="_blank"
+               class="social-link">
+                Facebook
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <p>
+        Made with ♡ by Irish
+    </p> 
+	
+	<br>
+
+    <p>
+        My little corner of the internet · 2026
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+    /* =====================================================
+       CURRENT DATE
+       ===================================================== */
+
+    let today = new Date();
+
+    let options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+
+    document.getElementById("today").textContent =
+        today.toLocaleDateString(
+            "en-US",
+            options
+        );
+
+
+    /* =====================================================
+       CONTACT FORM VALIDATION
+       ===================================================== */
+
+    function checkName() {
+
+        let name =
+            document.getElementById("FullName").value;
+
+        if (/[^A-Za-z\s]/.test(name)) {
+
+            alert(
+                "Numbers and special characters are not allowed in the name. Please use letters only."
+            );
+
+        }
+    }
+
+
+    function validateForm() {
+
+        let name =
+            document.getElementById("FullName").value;
+
+        let email =
+            document.getElementById("Email").value;
+
+
+        let namePattern =
+            /^[A-Za-z\s]+$/;
+
+        let emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        /* CHECK NAME */
+
+        if (!namePattern.test(name)) {
+
+            alert(
+                "Invalid name. Please use letters only."
+            );
+
+            return false;
+        }
+
+        /* CHECK EMAIL */
+
+        if (!emailPattern.test(email)) {
+
+            alert(
+                "Please enter a valid email address."
+            );
+
+            return false;
+        }
+
+        /* SUCCESS */
+
+        alert(
+            "Your message has been sent!"
+        );
+
+        return true;
+    }
+
+</script>
+
+</body>
+</html>
